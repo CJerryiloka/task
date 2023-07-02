@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var integer = prompt("enter any number less than 1 quadrillion (10^15)");
+      //  console.log(integer);
+         var suffix = [];
+        var integer_array = Array.from(String(integer), Number);
+        for (let i = integer_array.length; i >= 0; i--) {
+           // console.log(i);
+           let preffix,preffix_1,preffix_2;
+           switch (integer_array[i-1]) {
+            case 1: preffix = 'one'; 
+            break;
+            case 2: preffix = 'two'; 
+            break;
+            case 3: preffix = 'three'; 
+            break;
+            case 4: preffix = 'four'; 
+            break;
+            case 5: preffix = 'five'; 
+            break;
+            case 6: preffix = 'six'; 
+            break;
+            case 7: preffix = 'seven'; 
+            break;
+            case 8: preffix = 'eight'; 
+            break;
+            case 9: preffix = 'nine'; 
+            break;
+                
+           
+            default: preffix = '';
+                break;
+           }
+           
+
+           switch (i+1) {
+            case 3: preffix_1 = (integer_array[i] == 0) ? '' : 'hundred'; 
+            break;
+            case 4: preffix_1 = (integer_array[i] == 0) ? '' : 'thousand'; 
+            break;
+            case 7: preffix_1 = (integer_array[i] == 0) ? '' : 'million'; 
+            break;
+            case 10: preffix_1 = (integer_array[i] == 0) ? '' : 'billion'; 
+            break;
+            case 13: preffix_1 = (integer_array[i] == 0) ? '' : 'trillion'; 
+            break;
+            case 16: preffix_1 = (integer_array[i] == 0) ? '' : 'quadrillion'; 
+            break;
+            default: preffix_1 = '';
+                break;
+           }
+
+           suffix[i] = [preffix +''+ preffix_1];
+            
+        }
+       // console.log(integer_array); 
+        console.log(suffix);
+        console.log(integer_array.length);
+    </script>
+</body>
+</html>
